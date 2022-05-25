@@ -21,6 +21,9 @@ public class Main {
                     op.addProcces(new Procces(num, OperationMemory.procceses.size()));
                 }
                 case 2 -> {
+                    System.out.print("Введите id процесса для удаления: ");
+                    int num = in.nextInt();
+                    op.deleteFromOpMemory(num);
                 }
                 case 3 -> {
                     System.out.print("Введите id процесса для приостановки: ");

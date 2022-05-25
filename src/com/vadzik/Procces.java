@@ -9,14 +9,20 @@ public class Procces {
     int typeOfMemory;
 
 
-    Procces(int size, int id){
+    Procces(int size, int id) {
         this.size = size;
         state = "Ready";
         this.id = id;
     }
 
-    public void pauseProcces(){
-        state = "Wait";
+    public void pauseProcces() {
+        if (state.equals("Running"))
+            state = "Wait";
+        else{
+            state = "Running";
+            OperationMemory.addProcces(id);
+        }
+
     }
 
 }
